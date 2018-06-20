@@ -1,9 +1,14 @@
 package training.entity;
 
+import java.util.Set;
+
 public class Category {
 	// fields
 	private Integer id;
 	private String name;
+	
+	// one-to-many association
+	private Set<Product> products;
 	
 	public Category() {
 	}
@@ -28,6 +33,14 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
 	}
 
 	

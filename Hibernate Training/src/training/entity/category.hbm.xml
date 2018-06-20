@@ -10,5 +10,11 @@
 			<generator class="identity" />
 		</id>
 		<property name="name" column="name" />
+
+		<set name="products" lazy="false">
+			<key column="category_id" />
+			<one-to-many class="Product" />
+		</set>
+
 	</class>
 </hibernate-mapping>
