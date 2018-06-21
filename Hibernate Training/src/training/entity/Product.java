@@ -1,15 +1,18 @@
 package training.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -45,5 +48,24 @@ public class Product {
 	@JoinColumn(name = "category_id")
 	private Category category;
 
+	// one product has been referenced by multiple orders
+	// one product --> many orders
+	// since there is no foreign key relationship between products and orders
+	// we must use the many-to-many association using line_items as a join table
+	@ManyToMany()
+	@JoinTable(name="line_items",
+		joinColumns = @JoinColumn(name="product_id"),
+		inverseJoinColumns = @JoinColumn(name="order_id")
+	)
+	private Set<Order> orders;
 
 }
+
+
+
+
+
+
+
+
+

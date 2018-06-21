@@ -17,9 +17,9 @@ public class P07_AddNewOrder {
 		try {
 			Session session = factory.openSession();
 			
-			Customer c1 = (Customer) session.get(Customer.class, 1);
+			Customer c1 = (Customer) session.get(Customer.class, 2);
 
-			Product p1 = (Product) session.get(Product.class, 11);
+			Product p1 = (Product) session.get(Product.class, 12);
 			Product p2 = (Product) session.get(Product.class, 21);
 			Product p3 = (Product) session.get(Product.class, 31);
 
