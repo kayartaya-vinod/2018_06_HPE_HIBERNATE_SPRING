@@ -10,7 +10,10 @@ import training.entity.Employee;
 import training.entity.Laptop;
 import training.entity.LineItem;
 import training.entity.Order;
+import training.entity.Person;
 import training.entity.Product;
+import training.entity.Professor;
+import training.entity.Student;
 
 public class HibernateUtil {
 
@@ -30,10 +33,18 @@ public class HibernateUtil {
 		cfg.addAnnotatedClass(Customer.class);
 		cfg.addAnnotatedClass(Order.class);
 		cfg.addAnnotatedClass(LineItem.class);
+		cfg.addFile("src/training/entity/category.hbm.xml");
+		
+		// for one-to-one mapping example
 		cfg.addAnnotatedClass(Employee.class);
 		cfg.addAnnotatedClass(Laptop.class);
 		
-		cfg.addFile("src/training/entity/category.hbm.xml");
+		// for inheritance strategies example
+		cfg.addAnnotatedClass(Person.class);
+		cfg.addAnnotatedClass(Student.class);
+		cfg.addAnnotatedClass(Professor.class);
+		
+		
 
 		StandardServiceRegistryBuilder registry = new StandardServiceRegistryBuilder()
 				.applySettings(cfg.getProperties());

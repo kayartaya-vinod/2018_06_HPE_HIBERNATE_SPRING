@@ -24,7 +24,7 @@ public class Brand {
 	// if you are using mappedBy, then the assumption is
 	// that "brand" is a property in Product, which is mapped
 	// with ManyToOne. If not use @JoinColumn to specify the same
-	@OneToMany(mappedBy="brand", fetch= FetchType.EAGER)
+	@OneToMany(mappedBy="brand", fetch= FetchType.LAZY)
 	// @JoinColumn(name="brand_id")
 	private Set<Product> products;
 
