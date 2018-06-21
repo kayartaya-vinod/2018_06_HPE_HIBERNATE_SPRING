@@ -59,4 +59,11 @@ public class Brand {
 		this.products = products;
 	}
 
+	@Override
+	public String toString() {
+		return "Brand [id=" + id + ", name=" + name + "]";
+	}
+	
+	
+
 }

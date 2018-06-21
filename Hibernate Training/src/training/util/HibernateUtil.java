@@ -6,6 +6,8 @@ import org.hibernate.cfg.Configuration;
 
 import training.entity.Brand;
 import training.entity.Customer;
+import training.entity.Employee;
+import training.entity.Laptop;
 import training.entity.LineItem;
 import training.entity.Order;
 import training.entity.Product;
@@ -28,6 +30,9 @@ public class HibernateUtil {
 		cfg.addAnnotatedClass(Customer.class);
 		cfg.addAnnotatedClass(Order.class);
 		cfg.addAnnotatedClass(LineItem.class);
+		cfg.addAnnotatedClass(Employee.class);
+		cfg.addAnnotatedClass(Laptop.class);
+		
 		cfg.addFile("src/training/entity/category.hbm.xml");
 
 		StandardServiceRegistryBuilder registry = new StandardServiceRegistryBuilder()
