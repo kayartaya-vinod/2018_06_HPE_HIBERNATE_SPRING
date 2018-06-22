@@ -15,4 +15,8 @@ public class DaoException extends Exception {
 		super(cause);
 	}
 
+	public DaoException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
 }

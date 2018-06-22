@@ -2,17 +2,23 @@ package training.dao;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import training.entity.Product;
 
+@Transactional(readOnly = true, rollbackFor = { DaoException.class })
 public interface ProductDao {
 
 	// CRUD OPERATIONS
+	@Transactional(readOnly = false)
 	public void addProduct(Product product) throws DaoException;
 
 	public Product getProduct(Integer id) throws DaoException;
 
+	@Transactional(readOnly = false)
 	public void updateProduct(Product product) throws DaoException;
 
+	@Transactional(readOnly = false)
 	public void deleteProduct(Integer id) throws DaoException;
 
 	// QUERIES
