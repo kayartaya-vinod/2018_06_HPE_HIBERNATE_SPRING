@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
-@ComponentScan(basePackages = { "training.dao" })
+@ComponentScan(basePackages = { "training.dao", "training.aspects" })
+@EnableAspectJAutoProxy
 public class AppConfig4 {
 
 	@Bean(autowire = Autowire.BY_NAME)

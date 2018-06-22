@@ -26,5 +26,7 @@
 	<classpathentry kind="lib" path="JARS/spring-orm-4.3.14.RELEASE.jar"/>
 	<classpathentry kind="lib" path="JARS/spring-tx-4.3.14.RELEASE.jar"/>
 	<classpathentry kind="lib" path="JARS/xml-apis-1.0.b2.jar"/>
+	<classpathentry kind="lib" path="JARS/aspectjrt-1.9.1.jar"/>
+	<classpathentry kind="lib" path="JARS/aspectjweaver-1.9.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
