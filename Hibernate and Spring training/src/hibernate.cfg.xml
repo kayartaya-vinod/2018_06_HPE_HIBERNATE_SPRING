@@ -11,14 +11,21 @@
 		<property name="hibernate.connection.username">sa</property>
 		<property name="hibernate.connection.password"></property>
 
-		<property name="hibernate.show_sql">false</property>
-		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">false</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
 
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<!-- <mapping class="training.entity.Brand" /> -->
 		<!-- <mapping file="src/training/entity/category.hbm.xml" /> -->
+
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<property name="net.sf.ehcache.configurationResourceName">/ehcache.xml</property>
+
 	</session-factory>
 </hibernate-configuration>
 

@@ -11,7 +11,7 @@
 		</id>
 		<property name="name" column="name" />
 
-		<set name="products" lazy="false">
+		<set name="products">
 			<key column="category_id" />
 			<one-to-many class="Product" />
 		</set>

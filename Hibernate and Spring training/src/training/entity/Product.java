@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +26,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "products")
+@Cache(region="region1", usage=CacheConcurrencyStrategy.READ_ONLY)
 public class Product {
 
 	// primary/candidate key field
@@ -41,10 +46,10 @@ public class Product {
 
 	// assoication fields
 	// foreign key --> ManyToOne
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "category_id")
 	private Category category;
 
